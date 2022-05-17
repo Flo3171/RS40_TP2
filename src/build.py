@@ -17,14 +17,14 @@ CA_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "ca-public-key.pem"
 SERVER_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "server-private-key.pem"
 SERVER_CSR_FILENAME = RESOURCES_DIR + "server-csr.pem"
 SERVER_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "server-public-key.pem"
-CA_PASSWORD = # A compléter
+CA_PASSWORD = "Comment est votre blanquette ?"
 SERVER_PASSWORD = # A compléter
 
 CA_CONFIGURATION = Configuration("FR", "Territoire de Belfort", "Sevenans", "UTBM_CA", "localhost") 
 SERVER_CONFIGURATION = Configuration("FR", "Territoire de Belfort", "Sevenans", "UTBM_SER", "localhost") 
 
 # Création de l'autorité de certification
-certificate_authority = CertificateAuthority(#àcompléter) 
+certificate_authority = CertificateAuthority(CA_CONFIGURATION, CA_PASSWORD, CA_PRIVATE_KEY_FILENAME, CA_PUBLIC_KEY_FILENAME)
     # regardez en haut et ca/core.py
 
 # Création du server
