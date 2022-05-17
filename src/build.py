@@ -9,7 +9,7 @@ Created on May 2022
 from tools.core import Configuration
 from ca.core import CertificateAuthority
 from server.core import Server
-import print_pems as ppems  #a été ajouté pour l'impression
+import print_pems as pems  #a été ajouté pour l'impression
 
 RESOURCES_DIR = "resources/"
 CA_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "ca-private-key.pem"
@@ -37,17 +37,17 @@ signed_certificate = certificate_authority.sign(server.get_csr(), SERVER_PUBLIC_
 
 #impression des certificats à compléter regardez #print_pems
 print("CA Private Key:")
-print_pems.print_perms("ca-private-key.pem")
+pems.print_perms("ca-private-key.pem")
 print("CA Public Key:")
-print_pems.print_perms("ca-public-key.pem")
+pems.print_perms("ca-public-key.pem")
 print("Server Private Key:")
-print_pems.print_perms("server-private-key.pem")
+pems.print_perms("server-private-key.pem")
 print("Server CRS:")
-print_pems.print_perms("server-csr.pem")
+pems.print_perms("server-csr.pem")
 print("Server Public Key:")
-print_pems.print_perms("server-public-key.pem")
+pems.print_perms("server-public-key.pem")
 print("Signed Certificate:")
-print_pems.print_perms(signed_certificate)
+pems.print_perms(signed_certificate)
 
 
 
