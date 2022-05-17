@@ -37,17 +37,17 @@ signed_certificate = certificate_authority.sign(server.get_csr(), SERVER_PUBLIC_
 
 #impression des certificats à compléter regardez #print_pems
 print("CA Private Key:")
-pems.print_perms("ca-private-key.pem")
+pems.print_pems("ca-private-key.pem")
 print("CA Public Key:")
-pems.print_perms("ca-public-key.pem")
+pems.print_pems("ca-public-key.pem")
 print("Server Private Key:")
-pems.print_perms("server-private-key.pem")
+pems.print_pems("server-private-key.pem")
 print("Server CRS:")
-pems.print_perms("server-csr.pem")
+pems.print_pems("server-csr.pem")
 print("Server Public Key:")
-pems.print_perms("server-public-key.pem")
+pems.print_pems("server-public-key.pem")
 print("Signed Certificate:")
-pems.print_perms(signed_certificate)
+pems.print_pems(signed_certificate)
 
 
 
