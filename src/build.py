@@ -11,7 +11,7 @@ from ca.core import CertificateAuthority
 from server.core import Server
 import print_pems as pems  #a été ajouté pour l'impression
 
-RESOURCES_DIR = "resources/"
+RESOURCES_DIR = "src/resources/"
 CA_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "ca-private-key.pem"
 CA_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "ca-public-key.pem"
 SERVER_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "server-private-key.pem"
@@ -28,11 +28,15 @@ certificate_authority = CertificateAuthority(CA_CONFIGURATION, CA_PASSWORD, CA_P
     # regardez en haut et ca/core.py
 
 # Création du server
-server = Server(SERVER_CONFIGURATION, SERVER_PASSWORD, SERVER_PRIVATE_KEY_FILENAME, SERVER_PUBLIC_KEY_FILENAME)
+#server = Server(SERVER_CONFIGURATION, SERVER_PASSWORD, SERVER_PRIVATE_KEY_FILENAME, SERVER_PUBLIC_KEY_FILENAME)
+server = Server(SERVER_CONFIGURATION, SERVER_PASSWORD, SERVER_PRIVATE_KEY_FILENAME, SERVER_CSR_FILENAME)
     # regardez en haut et server/core.py
 
 # Signature du certificat par l'autorité de certification
-signed_certificate = server.get_csr()
+#signed_certificate = server.get_csr()
+
+signed_certificate = certificate_authority.sign(server.get_csr(), server._csr_filename)
+
 # A compléter regardez ca/core.py et server/core.py
 
 #impression des certificats à compléter regardez #print_pems
