@@ -35,7 +35,7 @@ server = Server(SERVER_CONFIGURATION, SERVER_PASSWORD, SERVER_PRIVATE_KEY_FILENA
 # Signature du certificat par l'autorité de certification
 #signed_certificate = server.get_csr()
 
-signed_certificate = certificate_authority.sign(server.get_csr(), server._csr_filename)
+signed_certificate = certificate_authority.sign(server.get_csr(), SERVER_PUBLIC_KEY_FILENAME)
 
 # A compléter regardez ca/core.py et server/core.py
 
