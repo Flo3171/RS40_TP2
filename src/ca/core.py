@@ -7,15 +7,6 @@ Created on May 2022
 """
 from src.tools.core import Configuration, generate_private_key, generate_public_key, sign_csr
 
-RESOURCES_DIR = "resources/"
-CA_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "ca-private-key.pem"
-CA_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "ca-public-key.pem"
-SERVER_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "server-private-key.pem"
-SERVER_CSR_FILENAME = RESOURCES_DIR + "server-csr.pem"
-SERVER_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "server-public-key.pem"
-CA_PASSWORD = "La RS40 c'est trop génial"
-SERVER_PASSWORD = "La RS40 c'est trop génial"
-
 
 class CertificateAuthority:
 
