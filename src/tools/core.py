@@ -24,7 +24,7 @@ from cryptography.hazmat.primitives import hashes
 # Classe de définition d'une configuration
 class Configuration:
 
-    def __init__(self, country: str, state: str, locality: str, org: str, hostname: str, alt_names = []):
+    def __init__(self, country: str, state: str, locality: str, org: str, hostname: str, alt_names=[]):
         """
         :param country:
         :param state:
