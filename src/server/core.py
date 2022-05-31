@@ -20,8 +20,7 @@ class Server:
 
     def __init__(self, config: Configuration, password: str, private_key_filename: str, csr_filename: str):
         self._config = config
-        self._private_key = generate_private_key(SERVER_PRIVATE_KEY_FILENAME, SERVER_PASSWORD)
-        self._public_key = generate_public_key(self._private_key, SERVER_PUBLIC_KEY_FILENAME, config)
+        self._private_key = generate_private_key(private_key_filename, password)
         self._csr = generate_csr(self._private_key, SERVER_CSR_FILENAME, self._config)
         self._private_key_filename = private_key_filename
         self._csr_filename = csr_filename

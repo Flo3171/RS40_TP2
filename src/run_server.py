@@ -28,5 +28,5 @@ if __name__ == "__main__":
     else :
         # HTTPS version
         # A compléter  : nécessité de déplacer les bons fichiers vers ce répertoire
-        context = ("reserver-public-key.pem", "resources/server-private-key.pem")
-        app.run(debug=True, host="0.0.0.0", port=8081, ssl_context=("server-public-key.pem", "server-private-key.pem"))
+        context = ("resources/server-public-key.pem", "resources/server-private-key.pem")
+        app.run(debug=True, host="0.0.0.0", port=8081, ssl_context=("resources/server-public-key.pem", "resources/server-private-key.pem"))
