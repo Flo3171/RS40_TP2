@@ -28,7 +28,7 @@ certificate_authority = CertificateAuthority(CA_CONFIGURATION, CA_PASSWORD, CA_P
     # regardez en haut et ca/core.py
 
 # Création du server
-server =Server(SERVER_CONFIGURATION, SERVER_PASSWORD, SERVER_PRIVATE_KEY_FILENAME, SERVER_CSR_FILENAME)
+server = Server(SERVER_CONFIGURATION, SERVER_PASSWORD, SERVER_PRIVATE_KEY_FILENAME, SERVER_CSR_FILENAME)
     # regardez en haut et server/core.py
 
 # Signature du certificat par l'autorité de certification
@@ -37,7 +37,8 @@ signed_certificate = certificate_authority.sign(server.get_csr(), SERVER_PUBLIC_
 
 #impression des certificats à compléter regardez #print_pems
 
-
+pems.print_pems(CA_PUBLIC_KEY_FILENAME)
+pems.print_pems(CA_PRIVATE_KEY_FILENAME)
 
 
 
